@@ -2,8 +2,17 @@
 
 - [Exam Question Keywords - Thomas Ebsen](#exam-question-keywords---thomas-ebsen)
   * [1.1 We have looked at some static analysis tools like StyleCop, PMD, FindBugs and SonarLint. Explain how static analysis can improve code quality. Explain how it helped you or could have helped you in your project</h1>](#11-we-have-looked-at-some-static-analysis-tools-like-stylecop--pmd--findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project--h1-)
+    + [STATIC ANALYSIS - NO CODE REQUIRED</b>](#static-analysis---no-code-required--b-)
+      - [StyleCop, PMD, FindBugs](#stylecop--pmd--findbugs)
+      - [Linters, SonarLint](#linters--sonarlint)
+      - [Security](#security)
+      - [Code Smells](#code-smells)
+      - [Technical Debt](#technical-debt)
   * [1.2 Explain test levels, and what characterizes the individual levels. Then, relate to your own project.](#12-explain-test-levels--and-what-characterizes-the-individual-levels-then--relate-to-your-own-project)
-  * [External Acceptance Testing](#external-acceptance-testing)
+      - [Unit Testing - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/unit/servicelayer">Assignment-3</a>](#unit-testing----a-href--https---githubcom-soft2020-test-assignment-3-tree-main-src-test-java-unit-servicelayer--assignment-3--a-)
+      - [Integration Testing - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/integration">Assignment-3</a>](#integration-testing----a-href--https---githubcom-soft2020-test-assignment-3-tree-main-src-test-java-integration--assignment-3--a-)
+      - [System Testing](#system-testing)
+      - [Acceptance Testing](#acceptance-testing)
   * [1.3 Explain what kinds of test can be carried out without running any code. Explain how it can be used on non-code documents as well.](#13-explain-what-kinds-of-test-can-be-carried-out-without-running-any-code-explain-how-it-can-be-used-on-non-code-documents-as-well)
 
  
