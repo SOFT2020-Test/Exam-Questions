@@ -26,4 +26,27 @@
 - <b>Technical Debt</b>
     - Agile Manifesto
     - Cost of rework / refactoring
+     - Cruft - badly designed, unnecessarily complicated, or unwanted code  
     - <img width=500px src="media/techdebt.png">
+
+## 1.2 Explain test levels, and what characterizes the individual levels. Then, relate to your own project.
+- **Unit Testing** - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/unit/servicelayer">Assignment-3</a>
+    - Testing software components
+    - Testing functionality
+    - Validate that the programs units are working as intended
+
+- **Integration Testing** - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/integration">Assignment-3</a>
+    - Test data flow from one module to another
+    - E.g. test that a customer is created and stored in database
+    - Test integration between program and database
+    - Unit vs Integration
+    - <img src="media/unitintegration.gif">
+- **System Testing**
+    - Evaluate Functional and Non-Functional needs for testing
+    - Test the system as a whole
+    - It is **Black Box** Testing
+    - **Testing Types** - Performance, Load, Stress & Scalability Testing
+    - **The Process** - Test Environment Setup -> Create Test Case -> Create Test Data -> Defect Reporting -> Regression Testing -> Log Defects -> Retest  
+    <img src="media/441.jpg" width=500px>
+
+
