@@ -6,5 +6,5 @@
     - SonarQube use all the above
     - Analyze code and find bugs
     - Made me change console print to logs (blocking call)
+- <b>Linters, SonarLint</b>
     - 
-<h2>Linters, SonarLint</h2>
