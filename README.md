@@ -42,19 +42,19 @@
     - <img width=500px src="media/techdebt.png">
 
 ## 1.2 Explain test levels, and what characterizes the individual levels. Then, relate to your own project.
-- ### Unit Testing - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/unit/servicelayer">Assignment-3</a>
+- #### Unit Testing - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/unit/servicelayer">Assignment-3</a>
     - Testing software components
     - Testing functionality
     - Validate that the programs units are working as intended
 
-- ### Integration Testing - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/integration">Assignment-3</a>
+- #### Integration Testing - <a href="https://github.com/SOFT2020-Test/Assignment-3/tree/main/src/test/java/integration">Assignment-3</a>
     - Test data flow from one module to another
     - E.g. test that a customer is created and stored in database
     - Test integration between program and database
     - Unit vs Integration  
     <br>
     - <img src="media/unitintegration.gif">
-- ### System Testing
+- #### System Testing
     - Evaluate Functional and Non-Functional needs for testing
     - Test the system as a whole
     - It is **Black Box** Testing
@@ -73,7 +73,7 @@
         - Retest     
         <br>
     - <img src="media/441.jpg" width=500px>
-- ### Acceptance Testing
+- #### Acceptance Testing
     - Manual Black Box Testing
     - Ad-hoc testing** aka Monkey Testing || Random Testing
     - Final test before ready for production
