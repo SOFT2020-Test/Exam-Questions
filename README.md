@@ -83,15 +83,21 @@
         <br>
     - <img src="media/441.jpg" width=500px>
 - #### Acceptance Testing
-    - Manual Black Box Testing
-    - Ad-hoc testing** aka Monkey Testing || Random Testing
-    - Final test before ready for production
-    - Internal Acceptance Testing
-    - External Acceptance Testing
-    - Customer Acceptance Testing
-        - Testing performed by the customers of the software (the one buying it / having it developed)
-    - User Acceptance Testing (UAT)
-        - Beta Testing - Performed by end users 
+    - Method
+        - Manual Black Box Testing following:
+        - Ad-hoc testing** aka Monkey Testing || Random Testing
+    - Task
+        - Acceptance Test [Execute >> Re-execute]
+        - Fourth & Last layer of testing before production
+    - Test Types
+        - Internal Acceptance Testing
+            - Alpha Testing - Performed by developer (in house)
+        - External Acceptance Testing
+            - Non-Developer - Performed by external people
+        - Customer Acceptance Testing
+            - Testing performed by the customers of the software (the one buying it / having it developed)
+        - User Acceptance Testing (UAT)
+            - Beta Testing - Performed by end users 
 
 ## 1.3 Explain what kinds of test can be carried out without running any code. Explain how it can be used on non-code documents as well.
 
