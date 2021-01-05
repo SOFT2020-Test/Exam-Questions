@@ -260,6 +260,54 @@
         - Complex and Hard to understand
         - Compile errors pushed to runtime errors
 
-- ### 1.6 Explain the concept of maintainable code, and how it’s related to test. Explain how to find out if a code base is maintainable.
+- ### 1.6 Explain the concept of maintainable code, and how it’s related to test. Explain how to find out if a code base is maintainable.  
+
+**Maintainable code is basically the amount of time it takes a developer to make a change and the amount of risk that the change could break something.**  
+Formula: **TimeToImplement / Risk**
+- ### Maintainability
+    - Formula: TimeToImplement / Risk
+    - Better Tests + Code = faster changes & less bugs
+- ### Product quality
+    - Have code standards
+    - Self explanatory code
+    - Readable Comments
+    - Reliable Program
+    - No or low bugs
+    - Usability / Easy to use
+    - Easy to expand, low coupling high cohesion
+- ### Temporal coupling
+- ### Continuous Integration
+- ### Static Analysis
+- ### Dependency injection, inversion of control
+    **Meaning: Import objects and functions from other classes**
+    - Allows for low coupling
+    - Types of dependency injection
+        - Constructor Injection
+        - Setter Injection
+        - Interface Injection
+    - Responsible for
+        - Creating objects
+        - Know which classes require objects
+        - Provide objects
+    - Example:
+        `@AutoWired, @Inject, @RestController, import java.util.logging.logger, constructor, etc`
+    - Pros
+        - Helps Unit Testing
+        - Less boilerplate code
+            - dependencies is done by the injector component
+        - Easier to extend application
+        - Helps enabling loose coupling
+    - Cons
+        - Complex and Hard to understand
+        - Compile errors pushed to runtime errors
+
+- ### Low coupling, high cohesion
+    - **High cohesion:** Elements within one class/module should functionally belong together and do one particular thing.
+    - **Loose coupling:** Among different classes/modules should be minimal dependency.
+    - Code can be changed without refactoring
+    - Code can be changed without changing other functions/classes
+    - Easy refactoring, less mess, not crashing system
+
+- ### Cyclomatic code complexity
 
     
