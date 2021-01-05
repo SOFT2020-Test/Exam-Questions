@@ -372,4 +372,18 @@
         ```  
         <img width=300px src="media/cyclomatic_complexity.jpg">
 
-    
+## 1.7 Explain unit testing, and what characterizes it in contrast to other types of test.
+- ### What and Why?
+    To ensure code quality and that units works
+    - Testing software components
+    - Testing functionality
+    - Validate that the programs units are working as intended
+- ### Unit Under Test / System Under Test
+    - **UUT - Unit Under Test**
+        - Object that is being tested
+        - jUnit Testing
+    - **SUT - System Under Test**
+        - The Whole System Being Tested
+        - Test for correct operation
+        - SUT comes after Integration Testing - <a href="#system-testing">Here</a>
+        
