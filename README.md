@@ -17,7 +17,7 @@
 
  
 ## 1.1 We have looked at some static analysis tools like StyleCop, PMD, FindBugs and SonarLint. Explain how static analysis can improve code quality. Explain how it helped you or could have helped you in your project</h1>   
-### STATIC ANALYSIS - NO CODE REQUIRED</b>
+### STATIC ANALYSIS - NO CODE REQUIRED
 
 - #### StyleCop, PMD, FindBugs
     - SonarQube use all the above
@@ -102,27 +102,44 @@
             - Beta Testing - Performed by end users 
 
 ## 1.3 Explain what kinds of test can be carried out without running any code. Explain how it can be used on non-code documents as well.
-- ### Reviews
+- #### Reviews
     - Visually inspect code for bugs
     - Pair Programming (XP)
-- ### Technical reviews
+- #### Technical reviews
     - Less formal review
     - Done by Moderator & Technical Expert
     - Peer Review (done by more people)
     - Find defects
-        - ##### Purpose
-            - Ensure technical concepts are used correctly
-            - To maintain consistency
-            - Quality Insurance
-            - ##### What to review
-                - Customer Feedback
-                - Audit Findings
-                - Internal / External issues
-                    - Process, performance, 
+    - Purpose
+        - Ensure technical concepts are used correctly
+        - To maintain consistency
+        - Quality Insurance
+    - What to review
+        - Customer Feedback
+        - Audit Findings
+        - Internal / External issues
+        - Process, performance, 
 - ### Management reviews
     - Formal Review
     - Involves Top Management
     - Every 3, 6 or 12 month
 - ### Audit
+    - Analyze Source Code
+    - Discover Bugs
+    - Discover Security Breaches
+    - Discover Code Violation
+    - Defensive Programming
+    - **High-Risk Vulnerabilities**
+        - Faults that compromise security
+        - No Input Validation (Prepared Statements)
+        - etc
+    - **Low-Risk Vulnerabilities**
+        - Cross-Site-Scripting
+        - Enumeration Attack (check if user exist in db)
+        - Directory Traversal
+            - Read files on server
+            - Stacktrace printed on errors
+            - etc
 - ### Static analysis
+    - <a href="#11-we-have-looked-at-some-static-analysis-tools-like-stylecop-pmd-findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project">Here</a>
 - ### Linters
