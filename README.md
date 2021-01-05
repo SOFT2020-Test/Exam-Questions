@@ -143,4 +143,65 @@
 - ### Static analysis
     - <a href="#11-we-have-looked-at-some-static-analysis-tools-like-stylecop-pmd-findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project">Here</a>
 - ### Linters
-    - <a href="#linters-sonarlint">Here</a>
+    - <a href="#linters-sonarlint">Here</a>  
+
+## 1.4 Explain test activities, and how they are related to each other. Then explain the test activities you carried out in your project.  
+- ### Unit Testing
+    - Testing software components
+    - Testing functionality
+    - Validate that the programs units are working as intended
+- ### Integration Testing
+    - Test data flow from one module to another
+    - E.g. test that a customer is created and stored in database
+    - Test integration between program and database
+    - Unit vs Integration  
+- ### Refactoring
+    - Small changes
+    - Fix nested loops
+    - Fix name too long
+    - Shorten code as much as possible
+    - Change internals without fucking externals
+    - Optimize, Cleanup, new functionality
+
+- ### Maintenance
+    - **Related To Refactoring**
+    - Use code standards
+    - Write useful comments
+    - Documentation
+    - Refactoring
+- ### Continuos Integration
+    - Github Actions
+        - Test Passes, Send Message to CI Tool
+        - CI Took Pushes to Production
+- ### Code Reviews
+    - Visually inspect code for bugs
+    - Pair Programming (XP)
+
+## 1.5 Testing is related to ensuring higher code quality. Elaborate on what characterizes high code quality, and what makes code testable.
+- ### Testable code
+    - Interfaces and Classes
+    - Code must return verifiable values or in other ways be verifiable
+    - Must return specific predictable output
+    - Loose coupling / dependency injection
+        - Should only be dependable on it-self to work
+    - No Global Variables / State Sharing
+        - Makes it hard to test if isolated
+        - The order of tests should not impact other tests (rip exercise 3 haha)
+- ### Assertion, defensive programming
+    - Ensures Code Correctness
+    - Reduce number og bugs
+    - Use Pre-Conditions
+        - Condition must be met before something happens
+        - Fail Fast Principle
+        - ```java
+            public void CreateAppointment(DateTime dateTime) {
+                if (dateTime.Date < DateTime.Now.AddDays(1).Date)
+                    throw new ArgumentException("Date is too early");
+    
+                if (dateTime.Date > DateTime.Now.AddMonths(1).Date)
+                    throw new ArgumentException("Date is too late");
+ 
+                /* Create an appointment */
+            } 
+            ```
+    
