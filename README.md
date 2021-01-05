@@ -194,14 +194,13 @@
         - Condition must be met before something happens
         - Fail Fast Principle
         - ```java
-            public void CreateAppointment(DateTime dateTime) {
-                if (dateTime.Date < DateTime.Now.AddDays(1).Date)
-                    throw new ArgumentException("Date is too early");
+          public void CreateAppointment(DateTime dateTime) {
+            if (dateTime.Date < DateTime.Now.AddDays(1).Date)
+                throw new ArgumentException("Date is too early");
     
-                if (dateTime.Date > DateTime.Now.AddMonths(1).Date)
-                    throw new ArgumentException("Date is too late");
- 
-                /* Create an appointment */
-            } 
-            ```
+            if (dateTime.Date > DateTime.Now.AddMonths(1).Date)
+                throw new ArgumentException("Date is too late");
+            /* Create an appointment */
+          } 
+          ```
     
