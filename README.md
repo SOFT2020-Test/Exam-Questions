@@ -236,6 +236,7 @@
             }
         }
         ```
+    
 - ### Dependency Injection (Inversion of Control)
     **Meaning: Import objects and functions from other classes**
     - Allows for low coupling
@@ -253,6 +254,12 @@
         - Helps Unit Testing
         - Less boilerplate code
             - dependencies is done by the injector component
+        - Easier to extend application
+        - Helps enabling loose coupling
     - Cons
+        - Complex and Hard to understand
+        - Compile errors pushed to runtime errors
+
+- ### 1.6 Explain the concept of maintainable code, and how it’s related to test. Explain how to find out if a code base is maintainable.
 
     
