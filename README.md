@@ -314,7 +314,7 @@
             }
             ```
 - ### Continuous Integration
-    - Github Actions
+    - Github Actions (. . .)
     - Test Passes, Send Message to CI Tool
     - CI Took Pushes to Production
 - ### Static Analysis
