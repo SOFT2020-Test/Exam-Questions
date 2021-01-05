@@ -143,3 +143,4 @@
 - ### Static analysis
     - <a href="#11-we-have-looked-at-some-static-analysis-tools-like-stylecop-pmd-findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project">Here</a>
 - ### Linters
+    - <a href="#linters-sonarlint">Here</a>
