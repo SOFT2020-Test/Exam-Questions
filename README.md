@@ -169,7 +169,7 @@
     - Write useful comments
     - Documentation
     - Refactoring
-- ### Continuos Integration
+- ### Continuous Integration
     - Github Actions
         - Test Passes, Send Message to CI Tool
         - CI Took Pushes to Production
@@ -195,6 +195,9 @@
             - cons: Must be renamed if refactored
             - pros: easy to identify method, state and what to expect
     - Sufficient Test of a method or class
+        - Focus on most important classes
+        - Test classes that are likely to fail
+        - **Risked Based Testing**
 
 - ### Assertion, defensive programming
     - Ensures Code Correctness
@@ -275,8 +278,47 @@
     - Usability / Easy to use
     - Easy to expand, low coupling high cohesion
 - ### Temporal coupling
+    - Code depends on time in some way
+    - Timer should be moved to interface
+    - Serious code smell
+    - Example
+        - Bad
+            ```java
+            public class Bank {
+                public void transferFunds(Account from, Account to, float amount) {
+                    var t0 = System.nanoTime(); //Time when starting the transfer
+                    from.deduct(amount);
+                    to.add(amount);
+                    var t1 = System.nanoTime(); //Time after transfer
+                    if(t1 - t0 > 100000) {
+                        maintenance.alertSlow(); //Transfer is slow
+                    }
+                }
+            }
+            ```
+        - Good
+             ```java
+            public Interface Timer {
+                long nanoTime();
+            }
+            public class Bank {
+                public void transferFunds(Account from, Account to, float amount, Timer timer) {
+                    var t0 = timer.nanoTime(); //Time before transfer, from interface
+                    from.deduct(amount);
+                    to.add(amount);
+                    var t1 = timer.nanoTime(); //Time after transfer, from interface
+                    if(t1 - t0 > 100000) {
+                        maintenance.alertSlow(); //Transfer is slow
+                    }
+                }
+            }
+            ```
 - ### Continuous Integration
+    - Github Actions
+    - Test Passes, Send Message to CI Tool
+    - CI Took Pushes to Production
 - ### Static Analysis
+    - <a href="#11-we-have-looked-at-some-static-analysis-tools-like-stylecop-pmd-findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project">Here</a>
 - ### Dependency injection, inversion of control
     **Meaning: Import objects and functions from other classes**
     - Allows for low coupling
@@ -308,5 +350,26 @@
     - Easy refactoring, less mess, not crashing system
 
 - ### Cyclomatic code complexity
+    - Limit Code Complexity
+    - Find how many test cases required
+    - Create **FLOW GRAPH DIAGRAM**
+    - Formula: `E - N + P*2`  
+        `E = Number of edges`  
+        `N = Number of nodes`  
+        `P = Number of nodes with exit points`  
+    - Example
+        ```java
+        if(A = 10) {
+            if(B > C) {
+                A = B;
+            } else {
+                A = C;
+            }
+        }
+        print(A)
+        print(B)
+        print(C)
+        ```  
+        <img width=300px src="media/cyclomatic_complexity.jpg">
 
     
