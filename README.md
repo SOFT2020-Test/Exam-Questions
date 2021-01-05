@@ -386,4 +386,64 @@
         - The Whole System Being Tested
         - Test for correct operation
         - SUT comes after Integration Testing - <a href="#system-testing">Here</a>
+- ### Unit test lifecycle(BeforeAll, AfterAll / SetUp, TearDown)
+    - @BeforeAll
+        - Execute before all test classes
+            ```java
+            // SUT (System Under Test)
+            private CustomerService customerService;
+            // DOC (Depended-on Component)
+            private CustomerStorage storageMock;
+            private Faker faker;
+            
+            @BeforeAll
+            public void beforeAll(){
+            storageMock = mock(CustomerStorage.class);
+            customerService = new CustomerServiceImpl(storageMock);
+            faker = new Faker();
+            }
+            ```
+    - @AfterAll
+        - Execute after all tests
+            ```java
+            _dbConnection.close();
+            ```
+- ### Test Doubles (mock, fake, sub, py)
+    Test Doubles = Mocking / Dummy Data
+    - Mockito
+        ```java
+        public void mustCallStorageWhenCreatingCustomer() {
+          // Arrange
+          // Act
+          var firstName = "a";
+          var lastName = "b";
+          var phonenumber = "12345678";
+          var birthdate = faker.date().birthday();
+          customerService.createCustomer(firstName, lastName, birthdate, phonenumber);
+
+          // Assert
+          // Can be read like: verify that storageMock was called 1 time on the method
+          // 'createCustomer' with an argument whose 'firstname' == firstName and
+          // whose 'lastname' == lastName
+          verify(storageMock, times(1))
+            .createCustomer(
+              argThat(x -> x.firstname.equals(firstName) &&
+                        x.lastname.equals(lastName)));
+        }
+        ```
+    - Faker
+        Dependency that provides fake dummy data
+
+- ### Test Driven Development (TDD)
+    - Make tests before writing code
+    - Tests should not change with code
+    - Test should continue to pass after refactoring
+    - Red, Green, Refactor
+
+- ### Dependency Injection
+    - <a href="#dependency-injection-inversion-of-control">Here</a>
+
+- ### Equivalence classes, boundary value analysis, equivalence partitions
+    WTF IS THIS?
+    READ UP ON THIS OR YOU'RE FUCKED
         
