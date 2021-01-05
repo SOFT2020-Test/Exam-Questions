@@ -187,6 +187,15 @@
     - No Global Variables / State Sharing
         - Makes it hard to test if isolated
         - The order of tests should not impact other tests (rip exercise 3 haha)
+- ### Names of Tests
+    - Naming Conventions
+        - Know what test does by its name
+        - Name express flow
+        - e.g: MethodName_StateUnderTest_ExpectedBehavior : `divideNumbers_divideByZero_ThrowsException`
+            - cons: Must be renamed if refactored
+            - pros: easy to identify method, state and what to expect
+    - Sufficient Test of a method or class
+
 - ### Assertion, defensive programming
     - Ensures Code Correctness
     - Reduce number og bugs
@@ -202,4 +211,48 @@
                 /* Create an appointment */
                 } 
               ```
+    - Example
+        - Bad Code, hard to test, not mockable
+         ```java
+        public class NewClass {
+            public void writeUserToFile(int id) {
+                String userName = app.getDbManager().getUserDb().getUserName(id);
+                try (FileWriter writer = new FileWriter("user.txt")) {
+                    writer.write(userName);
+                }
+            }
+        }
+        ```   
+        - Better code, easier to test, mockable
+        ```java
+        public class NewClass {
+            private final UserDatabase _userDb;
+            public NewClass(final UserDatabase userDb) {
+                _userDb = userDb;
+            }
+            public void writeUserToFile(int id, Writer) {
+                private final String userName = this._userDb.getUserName(id);
+                writer.write(userName);
+            }
+        }
+        ```
+- ### Dependency Injection (Inversion of Control)
+    **Meaning: Import objects and functions from other classes**
+    - Allows for low coupling
+    - Types of dependency injection
+        - Constructor Injection
+        - Setter Injection
+        - Interface Injection
+    - Responsible for
+        - Creating objects
+        - Know which classes require objects
+        - Provide objects
+    - Example:
+        `@AutoWired, @Inject, @RestController, import java.util.logging.logger, constructor, etc`
+    - Pros
+        - Helps Unit Testing
+        - Less boilerplate code
+            - dependencies is done by the injector component
+    - Cons
+
     
