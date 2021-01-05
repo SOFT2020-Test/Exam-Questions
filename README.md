@@ -86,6 +86,8 @@
     - Method
         - Manual Black Box Testing following:
         - Ad-hoc testing** aka Monkey Testing || Random Testing
+            - Testing random inputs
+            - Try to crash program
     - Task
         - Acceptance Test [Execute >> Re-execute]
         - Fourth & Last layer of testing before production
@@ -100,4 +102,27 @@
             - Beta Testing - Performed by end users 
 
 ## 1.3 Explain what kinds of test can be carried out without running any code. Explain how it can be used on non-code documents as well.
-
+- ### Reviews
+    - Visually inspect code for bugs
+    - Pair Programming (XP)
+- ### Technical reviews
+    - Less formal review
+    - Done by Moderator & Technical Expert
+    - Peer Review (done by more people)
+    - Find defects
+        - ##### Purpose
+            - Ensure technical concepts are used correctly
+            - To maintain consistency
+            - Quality Insurance
+            - ##### What to review
+                - Customer Feedback
+                - Audit Findings
+                - Internal / External issues
+                    - Process, performance, 
+- ### Management reviews
+    - Formal Review
+    - Involves Top Management
+    - Every 3, 6 or 12 month
+- ### Audit
+- ### Static analysis
+- ### Linters
