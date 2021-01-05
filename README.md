@@ -262,7 +262,7 @@
 
 - ### 1.6 Explain the concept of maintainable code, and how it’s related to test. Explain how to find out if a code base is maintainable.  
 
-**Maintainable code is basically the amount of time it takes a developer to make a change and the amount of risk that the change could break something.**  
+    **Maintainable code is basically the amount of time it takes a developer to make a change and the amount of risk that the change could break something.**  
 Formula: **TimeToImplement / Risk**
 - ### Maintainability
     - Formula: TimeToImplement / Risk
