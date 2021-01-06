@@ -445,8 +445,8 @@
     - <a href="#dependency-injection-inversion-of-control">Here</a>
 
 - ### Equivalence classes, boundary value analysis, equivalence partitions
+    **Black Box Testing**
     - Equivalence Partitioning
-        - Black Box Testing
         - Can be used on all tests, unit, integration, system, etc.
         - Divide input data into equivalent partitions
         - Reduces time required to test because it is divided (pick which test to run)
@@ -478,6 +478,31 @@
         - Formula: TimeToImplement / Risk
         - Better Tests + Code = faster changes & less bugs
     - ### Equivalence partitions
+        - <a href="#equivalence-classes-boundary-value-analysis-equivalence-partitions">Here</a>
     - ### Positive, negative tests
-    
-        
+        - Positive Tests
+            - Provide valid data
+            - Expected to pass
+            - Application is expected to behave correctly
+            - Example  
+                <img src="media/positive.png">
+        - Negative Test
+            - Provide invalid data
+            - Test expected to fail
+            - Ensure app doesn't crash
+            - Example  
+                <img src="media/negative.png">
+        - Technique
+            - Boundary Value Analysis
+                <img src="media/p3(1).png">
+            - Equivalent Partitioning
+                <img src="media/p5(1).png">
+
+- ### 1.9 Explain about test doubles. Explain how and why mocking is useful, and in what test areas.  
+    **Test Double - Think STUNT DOUBLE / MOCK DATA**   
+    **Useful when working separate - Frontend / Backend**  
+    **Think LSD, we mock data, we have no database** <a href="https://github.com/TEAM-B-SOFT2020/LSDFrontEnd/blob/main/src/contract/ContractMock.ts">[Link]</a>  
+    - ### Mockito, mocks, spies, stubs, fakes, dummies  
+    - ### Dependency injection
+    - ### Interfaces, contracts
+    - ### Black-box vs white-box
