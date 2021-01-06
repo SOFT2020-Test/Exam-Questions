@@ -432,6 +432,7 @@
                         x.lastname.equals(lastName)));
         }
         ```
+         <img src="media/mock.png">
     - Faker
         Dependency that provides fake dummy data
 
@@ -512,6 +513,7 @@
             - Dummy Data / Objects
         - **Fake**
             - Fake data, like in memory db
+                <img src="media/fake.png">
         - **Stubs**
             - Holds pre-defined data
             - Use the data to answer calls during tests
@@ -522,5 +524,48 @@
         - **Mocks** are pre-programmed with expectations which form a specification of the calls they are expected to receive. They can throw an exception if they receive a call they don't expect and are checked during verification to ensure they got all the calls they were expecting
     - ### Dependency injection
         - <a href="#dependency-injection-inversion-of-control">Here</a>
+        - Use junit and mockito for testing
+        - Example
+            ```java
+            public class MyApplication {
+                private final EmailService email;
+
+                public MyApplication(EmailService email) {
+                    this.email = email;
+                }
+
+                public boolean processMessages (String msg , String recipient ) {
+                    if (msg.length == 0 || recipient.length == 0 ) {
+                        return false ;
+                    }
+                    return this.email.sendEmail (msg , recipient ) ;
+                }
+            }
+
+
+            @BeforeEach
+            void setup() {
+                email = mock(EmailService.class);
+                when(email.sendEmail(any(), any())).thenReturn(true);
+                app = new MyApplication(email);
+            }
+
+            @Test
+            void testProcessZeroLengthMessageOrPerson() {
+                assertFalse(app.processMessages("", "Person"));
+                assertFalse(app.processMessages("Message", "")):
+                assertFalse(app.processMessages("", "")):
+            }
+
+            @Test
+            void testProcessMessage() {
+                assertTrue(app.processMessage("Message", "Person"));
+                verify(email).sendEmail("Message", "Person");
+            }
+            ```
     - ### Interfaces, contracts
+        - Interfaces - jUnit
     - ### Black-box vs white-box
+
+
+- ### 1.10 Characterize high quality software. Explain how writing tests can increase code quality. 
