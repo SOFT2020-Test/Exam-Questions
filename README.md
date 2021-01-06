@@ -241,7 +241,8 @@
         ```
     
 - ### Dependency Injection (Inversion of Control)
-    **Meaning: Import objects and functions from other classes**
+    **Meaning: Import objects and functions from other classes**  
+    This makes the project loosely coupled, which also makes it easier to refactor if changes is needed.  
     - Allows for low coupling
     - Types of dependency injection
         - Constructor Injection
@@ -444,6 +445,39 @@
     - <a href="#dependency-injection-inversion-of-control">Here</a>
 
 - ### Equivalence classes, boundary value analysis, equivalence partitions
-    WTF IS THIS?
-    READ UP ON THIS OR YOU'RE FUCKED
+    - Equivalence Partitioning
+        - Black Box Testing
+        - Can be used on all tests, unit, integration, system, etc.
+        - Divide input data into equivalent partitions
+        - Reduces time required to test because it is divided (pick which test to run)
+        - Used in tests with range of input fields
+    - Boundary Value Analysis
+        - Same as above
+        - `1-10 is VALID`
+        - `< 1 = INVALID`
+        - `> 10 INVALID`
+        - `3 digit number = INVALID`
+        - <img src="media/boundary.png">
+    - 
+- ### 1.8 Explain test driven development, and how it affects the development process and code quality.
+    - Red, Green, Refactor
+        - Red - Think about **WHAT TO DEVELOP - WRITE FAILING TEST**
+        - Green - Think about **HOW TO MAKE TEST PASS**
+        - Refactor - Think about **HOW TO IMPROVE EXISTING IMPLEMENTATION**
+    - Testable code
+        - Interfaces and Classes
+        - Code must return verifiable values or in other ways be verifiable
+        - Must return specific predictable output
+        - Loose coupling / dependency injection
+        - Should only be dependable on it-self to work
+        - No Global Variables / State Sharing
+        - Makes it hard to test if isolated
+        - The order of tests should not impact other tests (rip exercise 3 haha)
+    - Maintainable code
+        **Maintainable code is basically the amount of time it takes a developer to make a change and the amount of risk that the change could break something.**    
+        - Formula: TimeToImplement / Risk
+        - Better Tests + Code = faster changes & less bugs
+    - Equivalence partitions
+    - Positive, negative tests
+    
         
