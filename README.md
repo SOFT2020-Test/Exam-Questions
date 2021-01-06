@@ -170,9 +170,15 @@
     - Documentation
     - Refactoring
 - ### Continuous Integration
-    - Github Actions
+    - What is Continuous Integration?
+        - Github Actions (. . .)
         - Test Passes, Send Message to CI Tool
-        - CI Took Pushes to Production
+        - CI Tool Pushes to Production
+        - Workflow:
+            - Run Test Locally
+            - Compile code to CI
+            - Run test in CI
+            - Test passed? -> DEPLOY!
 - ### Code Reviews
     - Visually inspect code for bugs
     - Pair Programming (XP)
@@ -315,9 +321,15 @@
             }
             ```
 - ### Continuous Integration
-    - Github Actions (. . .)
-    - Test Passes, Send Message to CI Tool
-    - CI Took Pushes to Production
+    - What is Continuous Integration?
+        - Github Actions (. . .)
+        - Test Passes, Send Message to CI Tool
+        - CI Tool Pushes to Production
+        - Workflow:
+            - Run Test Locally
+            - Compile code to CI
+            - Run test in CI
+            - Test passed? -> DEPLOY!
 - ### Static Analysis
     - <a href="#11-we-have-looked-at-some-static-analysis-tools-like-stylecop-pmd-findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project">Here</a>
 - ### Dependency injection, inversion of control
@@ -522,6 +534,29 @@
                 <img src="media/stub.png">
         - **Spies** are stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
         - **Mocks** are pre-programmed with expectations which form a specification of the calls they are expected to receive. They can throw an exception if they receive a call they don't expect and are checked during verification to ensure they got all the calls they were expecting
+        - **Mockito**
+         - Mockito
+        ```java
+        public void mustCallStorageWhenCreatingCustomer() {
+          // Arrange
+          // Act
+          var firstName = "a";
+          var lastName = "b";
+          var phonenumber = "12345678";
+          var birthdate = faker.date().birthday();
+          customerService.createCustomer(firstName, lastName, birthdate, phonenumber);
+
+          // Assert
+          // Can be read like: verify that storageMock was called 1 time on the method
+          // 'createCustomer' with an argument whose 'firstname' == firstName and
+          // whose 'lastname' == lastName
+          verify(storageMock, times(1))
+            .createCustomer(
+              argThat(x -> x.firstname.equals(firstName) &&
+                        x.lastname.equals(lastName)));
+        }
+        ```
+         <img src="media/mock.png">
     - ### Dependency injection
         - <a href="#dependency-injection-inversion-of-control">Here</a>
         - Use junit and mockito for testing
@@ -568,4 +603,169 @@
     - ### Black-box vs white-box
 
 
-- ### 1.10 Characterize high quality software. Explain how writing tests can increase code quality. 
+- ## 1.10 Characterize high quality software. Explain how writing tests can increase code quality. 
+    - ### Defensive Programming <a href="#assertion-defensive-programming">Here</a>
+    - ### Black Box development
+    - ### Interfaces and Contracts (think LSD)
+        - High Security
+        - Guidelines and Classes are already set
+    - ### Inversion of Control
+         **Meaning: Import objects and functions from other classes**
+         **Without IoC:** You have a laptop computer and you accidentally break the screen. And darn, you find the same model laptop screen is nowhere in the market. So you're stuck.  
+        
+        **With IoC:** You have a desktop computer and you accidentally break the screen. You find you can just grab almost any desktop monitor from the market, and it works well with your desktop.
+         
+        - Allows for low coupling
+        - Types of dependency injection
+            - Constructor Injection
+            - Setter Injection
+            - Interface Injection
+        - Responsible for
+            - Creating objects
+            - Know which classes require objects
+            - Provide objects
+        - Example:
+            `@AutoWired, @Inject, @RestController, import java.util.logging.logger, constructor, etc`
+        - Pros
+            - Helps Unit Testing
+            - Less boilerplate code
+                - dependencies is done by the injector component
+            - Easier to extend application
+            - Helps enabling loose coupling
+        - Cons
+            - Complex and Hard to understand
+            - Compile errors pushed to runtime errors
+    - ### Dependency Injection
+        - Handler om at gøre det loosely coupled så gør det nemmere i fremtiden at ændre hvis man fx skal skifte database
+
+    - ### Components
+        - Should be a module or class
+        - Must be accessible
+        - DON'T MAKE LOCAL OBJECTS!!
+
+- ## 1.11 Elaborate on dependencies in software, and how it’s related to the subject of test.
+    A program may require one or more other programs to run **(the "dependencies" / imports)**  
+    HARD to test program with many DEPENDENCIES  
+    TO FIX THIS, WE USE **MOCKS!** to mock the classes
+    - ### Dependencies between layers
+        - User Interface
+        - Business Logic
+        - Data Access
+    - ### System Resources
+        - System is Resource Dependent (eg. requires ram, cpu, gpu)
+        - Specific Archives / Paths
+        - System Clock
+        - BAD IF MOVING SYSTEM TO OTHER AREA
+            - Path missing???
+            - Slower CPU
+            - CLock wrong  
+    - ### Dependency Inversion, Inversion of Control, Dependency Injection
+        Classes should depend on an interface or abstract 
+        Instead of referring to concrete resources, because interface or abstract counts as high-level resources
+        Easier to change later because of LOW COUPLING 
+
+        - Dependency Inversion
+            - Decoupling Software
+            - High level modularity
+            - Reusable functions, move to interfaces
+    
+- ## 1.12 Explain problems in test automation, and how a continuous integration tool can help.
+    - **PROBLEMS**
+        - BIG time investment at start -> save time later
+        - Easy to forget to add tests for new areas
+        - Having a wrong expectation of automated tests
+        - Automating tests at the wrong layer, at the wrong time and using wrong tools
+        - Automating useless tests
+        - Neglecting important areas
+        - Missing key scenarios
+    - Selenium and Cucumber
+        - Cucumber
+            - Acceptance Tests
+        - Selenium
+            - Frontend Testing / Automatic Testing
+
+    - ## What is Continuous Integration?
+        - Github Actions (. . .)
+        - Test Passes, Send Message to CI Tool
+        - CI Tool Pushes to Production
+        - Workflow:
+            - Run Test Locally
+            - Compile code to CI
+            - Run test in CI
+            - Test passed? -> DEPLOY!
+    - ### How can CI help regarding tests
+        - Can check code coverage
+        - Find out of system is slow -> TEST TAKES TOO LONG -> TOO MANY RESOURCES
+    - ### What is regression
+        - It's an ERROR
+        - Causes program to STOP WORKING
+        - Cycle
+            - Test-1 Fails ->
+            - Change Code - Fix Test-1 ->
+            - Test-1 PASSES! -> TEST-2 Fails now :(
+            - Regression Happened
+    - When is it needed
+        - When new features are added
+        - When code is changed
+    <img src="media/regressiontestingtypes.png">
+    - Tools?
+        - Selenium
+        - Cucumber
+    
+    - ### What test levels can be covered by a CI System
+        - Code Test ONLY
+        - jUnit & Integration Tests
+    
+    - Problems with CI?
+        - In LSD we cant run integration test of the backend to the frontend with GithubActions because the backend is running locally...
+
+- ## 1.13 Explain specification-based testing, and how you can be more confident that you have written a sufficient amount of tests.
+    **Specification Testing** Black box -> run tests with requirement specifications -> Krav Spicifikationer??
+    - Set of Models
+        - A model is again something that lays down the detailed description of the system but in the form of diagrams, tables, various notations etc. Various modelling techniques are
+        - Information modelling using E-R diagrams.
+        - Structured analysis and design technique.
+        - UML diagrams for Object Oriented Analysis.
+    - ### Equivalence partitioning
+        - Can be used on all tests, unit, integration, system, etc.
+        - Divide input data into equivalent partitions
+        - Reduces time required to test because it is divided (pick which test to run)
+        - Used in tests with range of input fields
+    - ### Boundary Value Analysis
+        - Boundary Value Analysis
+        - Same as above
+        - `1-10 is VALID`
+        - `< 1 = INVALID`
+        - `> 10 INVALID`
+        - `3 digit number = INVALID`
+        - <img src="media/boundary.png">
+    - ### Edge Cases
+        - Can be expected and unexpected
+        - Test for bugs that can happen on specific products, e.g. tests that only happens on iphone and not android
+        - Specific bugs that only happen some times. e.g
+            - Speaker
+                - 0-90% volume, works perfect
+                - 91-100% volume, scratching sounds.. this is edge case
+        - It is an oxymoron
+            - Might not happen for you, but your buddy
+        - Regression, or regression testing
+        - Should it be fixed? If it only happens 1% of the time?
+            - Yes/No, really depends
+        - Might not be reproducible
+    - ### Decision Table
+        Used to identify which correct tests cases
+        - Enlist the inputs in rows
+        - Enter all the rules in the column
+        - Fill the table with the different combination of inputs
+        - In the last row, note down the output against the input combination.
+        <img src="media/Decision-Table.png">
+    - ### Code Coverage
+        - Jacoco
+        - How much of your code is covered by tests
+    - ### Mutation Testing
+        - Make changes to code -> See if mutation happened -> Could it take it?
+        - Testing for ROBUSTNESS
+
+
+
+
