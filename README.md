@@ -1,7 +1,6 @@
 # Exam Question Keywords - Thomas Ebsen
 
 - [Exam Question Keywords - Thomas Ebsen](#exam-question-keywords---thomas-ebsen)
-- [Exam Question Keywords - Thomas Ebsen](#exam-question-keywords---thomas-ebsen)
   * [1.1 We have looked at some static analysis tools like StyleCop, PMD, FindBugs and SonarLint. Explain how static analysis can improve code quality. Explain how it helped you or could have helped you in your project</h1>](#11-we-have-looked-at-some-static-analysis-tools-like-stylecop--pmd--findbugs-and-sonarlint-explain-how-static-analysis-can-improve-code-quality-explain-how-it-helped-you-or-could-have-helped-you-in-your-project--h1-)
     + [STATIC ANALYSIS - NO CODE REQUIRED](#static-analysis---no-code-required)
       - [StyleCop, PMD, FindBugs](#stylecop--pmd--findbugs)
