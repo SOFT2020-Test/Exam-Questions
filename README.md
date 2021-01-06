@@ -459,12 +459,12 @@
         - `3 digit number = INVALID`
         - <img src="media/boundary.png">
     - 
-- ### 1.8 Explain test driven development, and how it affects the development process and code quality.
-    - Red, Green, Refactor
+- ## 1.8 Explain test driven development, and how it affects the development process and code quality.
+    - ### Red, Green, Refactor
         - Red - Think about **WHAT TO DEVELOP - WRITE FAILING TEST**
         - Green - Think about **HOW TO MAKE TEST PASS**
         - Refactor - Think about **HOW TO IMPROVE EXISTING IMPLEMENTATION**
-    - Testable code
+    - ### Testable code
         - Interfaces and Classes
         - Code must return verifiable values or in other ways be verifiable
         - Must return specific predictable output
@@ -473,11 +473,11 @@
         - No Global Variables / State Sharing
         - Makes it hard to test if isolated
         - The order of tests should not impact other tests (rip exercise 3 haha)
-    - Maintainable code
+    - ### Maintainable code
         **Maintainable code is basically the amount of time it takes a developer to make a change and the amount of risk that the change could break something.**    
         - Formula: TimeToImplement / Risk
         - Better Tests + Code = faster changes & less bugs
-    - Equivalence partitions
-    - Positive, negative tests
+    - ### Equivalence partitions
+    - ### Positive, negative tests
     
         
