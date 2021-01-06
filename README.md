@@ -501,7 +501,7 @@
 - ### 1.9 Explain about test doubles. Explain how and why mocking is useful, and in what test areas.  
     **Test Double - Think STUNT DOUBLE / MOCK DATA**   
     **Useful when working separate - Frontend / Backend**  
-    **Think LSD, we mock data, we have no database** <a href="https://github.com/TEAM-B-SOFT2020/LSDFrontEnd/blob/main/src/contract/ContractMock.ts">[Link]</a>  
+    **Think LSD, we mock data, we have no database** <a href="https://github.com/TEAM-B-SOFT2020/LSDFrontEnd/blob/main/src/contract/ContractMock.ts">[Link TO LSD CONTRACT MOCK]</a>  
     - ### Mockito, mocks, spies, stubs, fakes, dummies  
     - ### Dependency injection
     - ### Interfaces, contracts
