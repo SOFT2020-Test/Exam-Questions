@@ -387,6 +387,8 @@
 
 ## 1.7 Explain unit testing, and what characterizes it in contrast to other types of test.
 - ### What and Why?
+    **Unit tests are typically automated tests written and run by software developers to ensure that a section of an application (known as the "unit") meets its design and behaves as intended. In procedural programming, a unit could be an entire module, but it is more commonly an individual function or procedure.**
+
     To ensure code quality and that units works
     - Testing software components
     - Testing functionality
@@ -517,8 +519,14 @@
     **Think LSD, we mock data, we have no database** <a href="https://github.com/TEAM-B-SOFT2020/LSDFrontEnd/blob/main/src/contract/ContractMock.ts">[Link TO LSD CONTRACT MOCK]</a>  
 
 
-    **Mocking** Good for testing Integration
+    **Mocking** Good for testing Units, and example mocking databases
     **Stubs, Fakes, Dummies** Good for unit testing
+
+    **Test stub** (used for providing the tested code with "indirect input")  
+    **Mock object** (used for verifying "indirect output" of the tested code, by first defining the expectations before the tested code is executed)  
+    **Test spy** (used for verifying "indirect output" of the tested code, by asserting the expectations afterwards, without having defined the expectations before the tested code is executed. It helps in recording information about the indirect object created)  
+    **Fake object** (used as a simpler implementation, e.g. using an in-memory database in the tests instead of doing real database access)  
+    **Dummy object** (used when a parameter is needed for the tested method but without actually needing to use the parameter)  
 
     - ### Mockito, mocks, spies, stubs, fakes, dummies  
         - **Dummy**
@@ -604,6 +612,21 @@
 
 
 - ## 1.10 Characterize high quality software. Explain how writing tests can increase code quality. 
+    - What is high quality software
+        - Reliability
+        - Efficiency
+        - Security
+        - Maintainability
+        - Well Thought Through
+        - Fully tested
+            - All tests passes
+            - Tested for NullPointer Exceptions
+            - Null Checks
+            - Fall fast / fail with grace
+                - Reliable Error messages
+                - Usable error messages
+
+
     - ### Defensive Programming <a href="#assertion-defensive-programming">Here</a>
     - ### Black Box development
     - ### Interfaces and Contracts (think LSD)
@@ -636,7 +659,7 @@
             - Complex and Hard to understand
             - Compile errors pushed to runtime errors
     - ### Dependency Injection
-        - Handler om at gøre det loosely coupled så gør det nemmere i fremtiden at ændre hvis man fx skal skifte database
+        - Make software loosely coupled - Easier refactoring
 
     - ### Components
         - Should be a module or class
@@ -720,6 +743,7 @@
         - In LSD we cant run integration test of the backend to the frontend with GithubActions because the backend is running locally...
 
 - ## 1.13 Explain specification-based testing, and how you can be more confident that you have written a sufficient amount of tests.
+    **Specification Testing** is Black Box Testing techniques because in this testers view the software as a black-box. As they have no knowledge of how the system or component is structured inside the box. In essence, the tester is only concentrating on what the software does, not how it does it.
     **Specification Testing** Black box -> run tests with requirement specifications -> Krav Spicifikationer??
     - Set of Models
         - A model is again something that lays down the detailed description of the system but in the form of diagrams, tables, various notations etc. Various modelling techniques are
