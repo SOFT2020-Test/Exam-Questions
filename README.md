@@ -502,7 +502,25 @@
     **Test Double - Think STUNT DOUBLE / MOCK DATA**   
     **Useful when working separate - Frontend / Backend**  
     **Think LSD, we mock data, we have no database** <a href="https://github.com/TEAM-B-SOFT2020/LSDFrontEnd/blob/main/src/contract/ContractMock.ts">[Link TO LSD CONTRACT MOCK]</a>  
+
+
+    **Mocking** Good for testing Integration
+    **Stubs, Fakes, Dummies** Good for unit testing
+
     - ### Mockito, mocks, spies, stubs, fakes, dummies  
+        - **Dummy**
+            - Dummy Data / Objects
+        - **Fake**
+            - Fake data, like in memory db
+        - **Stubs**
+            - Holds pre-defined data
+            - Use the data to answer calls during tests
+            - Used when we don't want to use objects that would answer with real data
+            - Example: Object that needs data from DB to respond to method call
+                <img src="media/stub.png">
+        - **Spies** are stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
+        - **Mocks** are pre-programmed with expectations which form a specification of the calls they are expected to receive. They can throw an exception if they receive a call they don't expect and are checked during verification to ensure they got all the calls they were expecting
     - ### Dependency injection
+        - <a href="#dependency-injection-inversion-of-control">Here</a>
     - ### Interfaces, contracts
     - ### Black-box vs white-box
